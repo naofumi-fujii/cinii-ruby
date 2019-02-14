@@ -1,6 +1,6 @@
-RSpec.describe Cinii::Ruby do
+RSpec.describe Cinii do
   it "has a version number" do
-    expect(Cinii::Ruby::VERSION).not_to be nil
+    expect(Cinii::VERSION).not_to be nil
   end
 
   it "does something useful" do
