@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build: 
+    docker:
+      - image: circleci/ruby:2.6.1
+    steps:
+      - checkout
+
+      # Install dependencies for Ruby Gems
+      - run: gem install bundler
+      - run: bundle install --path vendor/bundle
+
+      # Store dependency caches for Ruby Gems
+      - type: cache-save
+        key: cinii-ruby-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
