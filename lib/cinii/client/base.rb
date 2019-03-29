@@ -30,10 +30,10 @@ module Cinii
           @cinii_connection ||= Faraday.new(faraday_options) do |con|
             con.request  :json
             con.response :json
-            con.adapter  Faraday.default_adapter
             con.response :logger do | logger |
               logger.filter(/(appid=)(\w+)/,'\1[REMOVED]')
             end
+            con.adapter  Faraday.default_adapter
           end
         end
 

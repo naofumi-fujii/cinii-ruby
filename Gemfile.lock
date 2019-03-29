@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    cinii (0.1.0)
+    cinii (0.1.1)
       faraday
       faraday_middleware
 
